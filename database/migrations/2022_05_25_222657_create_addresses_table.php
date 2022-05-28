@@ -17,7 +17,6 @@ class CreateAddressesTable extends Migration
             $table->id();
             $table->string('street');
             $table->string('number');
-            $table->string('number');
             $table->foreignId('user_id')->constrained('users');
             $table->foreignId('company_id')->constrained('companies');
             $table->foreignId('city_id')->constrained('cities');
