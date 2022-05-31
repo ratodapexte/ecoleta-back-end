@@ -12,15 +12,15 @@
 <body>
     <form class="m-4" method="post" action="{{route('auth.user')}}">
         @csrf
-        <h1 class="text-center">Ecoleta</h1>
+        <h1 class="text-center">Ecoleta - Login</h1>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Login</label>
-            <input type="email" name="email" class="form-control" id="exampleInputEmail1" >
+            <label for="emai1" class="form-label">Email</label>
+            <input type="email" name="email" class="form-control" id="email" >
             
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Senha</label>
-            <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            <label for="password" class="form-label">Senha</label>
+            <input type="password" name="password" class="form-control" id="password">
         </div>  
         <button type="submit" class="btn btn-primary">Conectar</button>
     </form>

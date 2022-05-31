@@ -17,9 +17,12 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('layouts.register');
  });
 
 Route::get('/login', [UserController::class,'showLogin'])->name('show.login');
-Route::post('/auth', [UserController::class,'auth'])->name('auth.user');
+Route::post('/auth', [UserController::class,'authUser'])->name('auth.user');
+Route::get('/login', [UserController::class,'showRegister'])->name('show.register');
+Route::post('/register', [UserController::class,'registerUser'])->name('register.user');
+
 
