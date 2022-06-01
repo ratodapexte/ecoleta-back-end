@@ -1,0 +1,1 @@
+{{route('resetPassword', ['token' => $token])}}

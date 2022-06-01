@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/redirectReset', [Controller::class, 'redirectReset'])->name('redirectReset');
+Route::get('/reset-password', [Controller::class, 'resetPassword'])->name('resetPassword');
