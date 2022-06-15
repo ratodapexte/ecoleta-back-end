@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateResiduumTable extends Migration
+class CreateSchedulesPointsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateResiduumTable extends Migration
      */
     public function up()
     {
-        Schema::create('residuum', function (Blueprint $table) {
+        Schema::create('schedule_point', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->foreignId('point_id')->nullable()->constrained('point');
+            $table->foreignId('schedule_id')->nullable()->constrained('schedule');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateResiduumTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('residuum');
+        Schema::dropIfExists('schedule_point');
     }
 }

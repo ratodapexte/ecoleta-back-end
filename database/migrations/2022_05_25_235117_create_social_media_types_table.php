@@ -13,7 +13,7 @@ class CreateSocialMediaTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('social_media_types', function (Blueprint $table) {
+        Schema::create('social_media_type', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateSocialMediaTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('social_media_types');
+        Schema::dropIfExists('social_media_type');
     }
 }

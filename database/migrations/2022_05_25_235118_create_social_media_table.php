@@ -13,11 +13,11 @@ class CreateSocialMediaTable extends Migration
      */
     public function up()
     {
-        Schema::create('social_medias', function (Blueprint $table) {
+        Schema::create('social_media', function (Blueprint $table) {
             $table->id();
             $table->string('link');
-            $table->foreignId('company_id')->constrained('companies');
-            $table->foreignId('social_media_types_id')->constrained('social_media_types');
+            $table->foreignId('company_id')->constrained('company');
+            $table->foreignId('social_media_type_id')->constrained('social_media_type');
             $table->timestamps();
         });
     }

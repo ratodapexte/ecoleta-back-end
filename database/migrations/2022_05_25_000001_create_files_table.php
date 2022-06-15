@@ -13,12 +13,12 @@ class CreateFilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('files', function (Blueprint $table) {
+        Schema::create('file', function (Blueprint $table) {
             $table->id();
             $table->string('path');
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('company_id')->constrained('companies');
-            $table->foreignId('file_type_id')->constrained('file_types');
+            $table->foreignId('user_id')->constrained('user');
+            $table->foreignId('company_id')->constrained('company');
+            $table->foreignId('file_type_id')->constrained('file_type');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateFilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('files');
+        Schema::dropIfExists('file');
     }
 }

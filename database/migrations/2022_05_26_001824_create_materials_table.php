@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFileTypesTable extends Migration
+class CreateMaterialsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateFileTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('file_type', function (Blueprint $table) {
+        Schema::create('material', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->timestamps();
@@ -27,6 +27,6 @@ class CreateFileTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file_type');
+        Schema::dropIfExists('material');
     }
 }

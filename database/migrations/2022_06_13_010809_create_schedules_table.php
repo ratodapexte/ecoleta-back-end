@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFileTypesTable extends Migration
+class CreateSchedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateFileTypesTable extends Migration
      */
     public function up()
     {
-        Schema::create('file_type', function (Blueprint $table) {
+        Schema::create('schedule', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('open');
+            $table->string('close');
+            $table->boolean('is_open')->default(true);
+            $table->foreignId('week_day_id')->constrained('week_day');
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateFileTypesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('file_type');
+        Schema::dropIfExists('schedule');
     }
 }

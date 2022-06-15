@@ -13,12 +13,12 @@ class CreatePointsTable extends Migration
      */
     public function up()
     {
-        Schema::create('points', function (Blueprint $table) {
+        Schema::create('point', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->double('longitude')->nullable();
             $table->double('latitude')->nullable();
-            $table->foreignId('company_id')->constrained('companies');
+            $table->foreignId('user_id')->constrained('user');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreatePointsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('points');
+        Schema::dropIfExists('point');
     }
 }
